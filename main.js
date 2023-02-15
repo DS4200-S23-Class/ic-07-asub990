@@ -8,9 +8,9 @@ const X_SCALE = d3.scaleLinear().domain([0, (MAX_X + 10000)]).range(0, 1000);
 // add axis
 
 // create a frame
-const frame = d3.select("plot").append("svg").attr("height", 100).attr("width", 200).attr("class", "frame");
+const frame = d3.select("plot").append("svg").attr("height", 500).attr("width", 500).attr("class", "frame");
 
 // add data to the frame
-frame.selectAll("points").data(DATA).enter().append("cirle").attr("cx", 0).attr("cy", (d) => {return (X_SCALE(d) + margins.left)}).attr("r", 20)
-.attr("class", "point");
+frame.selectAll("points").data(DATA).enter().append("cirle").attr("cx", 50).attr("cy", (d) => {return (X_SCALE(d) + margins.left)}).attr("r", 20)
+.attr("r", 5).attr("class", "point");
 
