@@ -10,7 +10,7 @@ const X_SCALE = d3.scaleLinear().domain([0, (MAX_X + 10000)]).range(0, 1000);
 // add axis
 
 // create a frame
-const FRAME = d3.select("vis1")
+const FRAME = d3.select("#vis1")
               .append("svg")
               .attr("height", FRAME_HEIGHT)
               .attr("width", FRAME_WIDTH)
