@@ -4,8 +4,8 @@ const FRAME_WIDTH = 500;
 const DATA = [55000, 48000, 27000, 66000, 90000];
 
 // scaling functions
-const MAX_X = d3.max(data, (d) => {return d;});
-const X_SCALE = d3.scaleLinear().domain([0, (MAX_X + 10000)]).range(0, 1000);
+const MAX_Y = d3.max(data, (d) => {return d;});
+const Y_SCALE = d3.scaleLinear().domain([0, (MAX_Y + 10000)]).range(0, 1000);
 
 // add axis
 
@@ -19,7 +19,7 @@ const FRAME = d3.select("#vis1")
 // add data to the frame
 FRAME.selectAll("points").data(DATA).enter().append("cirle")
 .attr("cx", 50)
-.attr("cy", (d) => {return (X_SCALE(d) + MARGINS.left)})
+.attr("cy", (d) => {return (Y_SCALE(d) + MARGINS.left);})
 .attr("r", 5)
 .attr("class", "point");
 
